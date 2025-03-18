@@ -1,10 +1,8 @@
-saveName = function () {
-  let name = document.getElementById("name-input");
-  localStorage.setItem("name:", name);
-};
+const nameList = document.getElementById("name");
+const saveButton = document.getElementById("save");
+const deleteButton = document.getElementById("delete");
 
-removeName = function () {
-  if (localStorage.getItem("name")) {
-    localStorage.removeItem("name");
-  }
-};
+saveButton.addEventListener("click", function () {
+  const text = nameList.value;
+  localStorage.setItem("names", text);
+});
